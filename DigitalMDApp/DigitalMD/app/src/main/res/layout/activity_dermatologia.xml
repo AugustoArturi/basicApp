@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DermatologiaActivity"
+android:background="@drawable/back3">
+
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back1"
+
+
+            app:titleTextColor="@color/colorWhite"
+            app:title="Dermatologia"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+        <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnround"
+                    app:srcCompat="@drawable/doc" android:id="@+id/btnMedico"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/pac"
+                    android:background="@drawable/btnround"
+                    android:id="@+id/btnPaciente"
+                    android:layout_marginStart="50dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Medico o paciente"
+              android:layout_marginTop="200dp"
+              android:textColor="@color/colorWhite"
+              android:layout_centerHorizontal="true" android:textSize="24sp" android:textStyle="bold"/>
+
+
+
+</RelativeLayout>
