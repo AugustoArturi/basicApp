@@ -72,8 +72,7 @@ class PacienteActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when(requestCode){
             1000 -> {
-                if (grantResults.size > 0 && grantResults[0] ==
-                        PackageManager.PERMISSION_GRANTED){
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             }
                 else {
                     Toast.makeText(this,"Permission denied", Toast.LENGTH_SHORT).show()
@@ -88,14 +87,14 @@ class PacienteActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null){
-
             photoUri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, photoUri)
             CircleImageView.setImageBitmap(bitmap)
 
         }
 
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK && requestCode == 1001 ) {
+            //image_uri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, image_uri)
             CircleImageView.setImageBitmap(bitmap)
         }

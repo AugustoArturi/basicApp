@@ -26,6 +26,17 @@
                 app:civ_border_color="@color/colorBlack"
 
         />
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center_horizontal"
+                android:foregroundGravity="center"
+                android:id="@+id/CircleImageView2"
+                android:layout_marginTop="-400dp"
+                app:civ_border_width="3dp"
+                app:civ_border_color="@color/colorBlack"
+
+        />
 
         <ImageButton
                 android:layout_width="wrap_content"
