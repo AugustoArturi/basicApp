@@ -34,12 +34,13 @@ android:background="@drawable/back3">
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btnround"
-                    app:srcCompat="@drawable/doc" android:id="@+id/btnMedico"/>
+                    android:background="@null"
+                    app:srcCompat="@drawable/doc" android:id="@+id/btnMedico"
+                    android:padding="20dp"/>
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/pac"
-                    android:background="@drawable/btnround"
+                    android:background="@null"
                     android:id="@+id/btnPaciente"
                     android:layout_marginStart="50dp"/>
 
