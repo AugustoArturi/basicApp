@@ -16,7 +16,7 @@ class DermatologiaActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btnMedico.setOnClickListener {
-            val intent = Intent(this, MedicoActivity::class.java)
+            val intent = Intent(this, SignIn_userActivity::class.java)
             startActivity(intent)
         }
 
@@ -24,6 +24,8 @@ class DermatologiaActivity : AppCompatActivity() {
             val intent = Intent(this, PacienteActivity::class.java)
             startActivity(intent)
         }
+
+
 
     }
 

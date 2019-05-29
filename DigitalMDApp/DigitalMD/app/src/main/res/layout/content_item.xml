@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +8,7 @@
 
 
 
-    <ImageView android:layout_width="match_parent" android:layout_height="600dp"
+    <ImageView android:layout_width="match_parent" android:layout_height="500dp"
                android:src="@drawable/trama" android:scaleType="fitXY"
                android:id="@+id/iv_photo" />
 
@@ -18,11 +18,11 @@
               android:background="@color/colorAccent"
               android:textSize="18sp"
               android:textStyle="bold"
-              android:layout_marginTop="560dp"
+              android:layout_marginTop="500dp"
               android:id="@+id/tv_name"/>
 
     <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:layout_marginTop="610dp" android:gravity="center">
+              android:layout_marginTop="550dp" android:gravity="center">
 
         <ImageButton
                 android:layout_width="wrap_content"
@@ -55,4 +55,4 @@
     </TableRow>
 
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

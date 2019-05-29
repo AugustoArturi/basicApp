@@ -6,14 +6,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_dermatologia.*
-import kotlinx.android.synthetic.main.activity_medico.*
+import kotlinx.android.synthetic.main.activity_signin_user.*
 
-class MedicoActivity : AppCompatActivity() {
+class SignIn_userActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_medico)
+        setContentView(R.layout.activity_signin_user)
 
 
         btnSignUp.setOnClickListener {
@@ -28,6 +27,10 @@ class MedicoActivity : AppCompatActivity() {
             confirmSignIn()
             startActivity(Intent(this, SwipeActivity::class.java))
 
+        }
+
+        btnSignUp.setOnClickListener {
+            startActivity(Intent(this, SignUp_userActivity::class.java))
         }
 
 

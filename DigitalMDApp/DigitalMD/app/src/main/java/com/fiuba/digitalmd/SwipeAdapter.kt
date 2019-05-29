@@ -4,7 +4,10 @@ import android.app.Activity
 
 import com.fiuba.digitalmd.R
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
+import android.media.Image
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -44,11 +47,20 @@ class SwipeAdapter (internal var context: Context, internal var usersList:List<U
         val dermaImage = view.findViewById<View>(R.id.iv_photo) as ImageView
         val epigrafe = view.findViewById<View>(R.id.tv_name) as TextView
         val btnOk = view.findViewById<View>(R.id.btnOk) as ImageButton
+        val btnConsultarConOtro = view.findViewById<View>(R.id.btnConsultarConOtro) as ImageButton
 
         Picasso.get().load(usersList[position].urlImage).into(dermaImage)
         epigrafe.text = usersList[position].name
         btnOk.setOnClickListener {
             Toast.makeText(context,"OK clicked",Toast.LENGTH_SHORT).show()
+        }
+
+        btnConsultarConOtro.setOnClickListener {
+            var builder = AlertDialog.Builder(context)
+            builder.setTitle("Estimado doctor/a")
+            builder.setMessage(" ¿ Deseas que opine otro profesional ?")
+            builder.setPositiveButton("Si",{dialog: DialogInterface?, which: Int ->  } )
+            builder.show()
         }
         container.addView(view)
 

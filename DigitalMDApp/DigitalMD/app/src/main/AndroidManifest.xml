@@ -16,13 +16,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SignUp_userActivity">
+        </activity>
         <activity android:name=".Swipe">
         </activity>
         <activity android:name=".SwipeActivity">
         </activity>
         <activity android:name=".PacienteActivity">
         </activity>
-        <activity android:name=".MedicoActivity">
+        <activity android:name=".SignIn_userActivity">
         </activity>
         <activity android:name=".RecetasActivity">
         </activity>

@@ -27,6 +27,7 @@ class SwipeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_swipe)
         fetchDataFromFirebase()
         viewpager_images.setPageTransformer(true,DepthPageTransformer())
+
     }
 
     private fun fetchDataFromFirebase() {
