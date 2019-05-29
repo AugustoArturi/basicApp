@@ -2,9 +2,10 @@ package com.fiuba.digitalmd
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.util.Patterns
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_dermatologia.*
 import kotlinx.android.synthetic.main.activity_medico.*
 

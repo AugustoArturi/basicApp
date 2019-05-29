@@ -6,12 +6,14 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.annotation.RequiresApi
+
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_paciente.*
 import java.util.jar.Manifest
 
