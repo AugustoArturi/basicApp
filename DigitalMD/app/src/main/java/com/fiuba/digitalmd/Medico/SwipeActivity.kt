@@ -4,6 +4,7 @@ package com.fiuba.digitalmd.Medico
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Models.DepthPageTransformer
+import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.R
 import com.google.firebase.database.*

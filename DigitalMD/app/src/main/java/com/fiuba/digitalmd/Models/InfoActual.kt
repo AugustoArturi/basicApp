@@ -4,7 +4,7 @@ object InfoActual {
 
     private  var usuario_actual : User = User("","","","","","","")
     private var medico_actual: Medico = Medico("","","","","","","")
-
+    private var uidActual : String = ""
     fun setUsuarioActual(user : User){
         usuario_actual = user
     }
@@ -19,5 +19,13 @@ object InfoActual {
 
     fun getMedicoActual():Medico{
         return medico_actual
+    }
+
+    fun setUidActual(uid: String) {
+        uidActual = uid
+    }
+
+    fun getUidActual():String{
+        return uidActual
     }
 }

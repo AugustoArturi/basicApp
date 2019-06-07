@@ -102,7 +102,7 @@ class PacienteActivity : AppCompatActivity() {
         val apellido = InfoActual.getUsuarioActual().apellido
         val desc = etComentario.text.toString()
 
-        val paciente = Paciente(nombre,apellido, url, desc, "En espera","","")
+        val paciente = Paciente(nombre,apellido, url, desc, "En espera","","", uid!!)
         database.setValue(paciente)
             .addOnSuccessListener {
                 Log.d("PacienteActivity", "Paciente added to database")
