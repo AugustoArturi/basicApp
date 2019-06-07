@@ -3,33 +3,53 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/back1">
+
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
             android:layout_marginEnd="80dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="100dp"
-            android:gravity="center_vertical"
-            android:layout_centerVertical="true"
-            android:text="Username"
-            android:textColor="@color/colorAccent"
+            android:layout_marginTop="20dp"
+            android:text="Resultado"
+            android:textColor="@color/colorWhite"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:id="@+id/txtViewWorkgroup"
+            android:id="@+id/txtResultado"
     />
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="40dp"
+            android:text="Descripcion"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:id="@+id/txtDesc"
+    />
+
+
+
     <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgViewLogo"
+            android:id="@+id/iv_photo_diagnostico"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_centerVertical="true"
             app:civ_border_width="2dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_color="@color/colorWhite"
             app:layout_constraintTop_toTopOf="parent" />
+
 </RelativeLayout>

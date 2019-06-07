@@ -5,11 +5,11 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DermatologiaActivity"
+        tools:context=".ElegirUsuarioActivity"
 android:background="@drawable/back3">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,27 +27,62 @@ android:background="@drawable/back3">
 
         <LinearLayout
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btnround"
-                    app:srcCompat="@drawable/doc" android:id="@+id/btnMedico"/>
+                    android:background="@null"
+                    app:srcCompat="@drawable/doc" android:id="@+id/btnMedico"
+                    android:padding="20dp"
+                    android:layout_marginTop="100dp"/>
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/pac"
-                    android:background="@drawable/btnround"
+                    android:background="@null"
                     android:id="@+id/btnPaciente"
-                    android:layout_marginStart="50dp"/>
+                    />
 
         </LinearLayout>
 
+        <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    app:srcCompat="@drawable/farmacia" android:id="@+id/btnFarmacia"
+                    android:padding="20dp"
+                    android:layout_marginTop="100dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Obra Social" android:textColor="@color/colorBlack"/>
+
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/obrasocial"
+                    android:background="@null"
+                    android:id="@+id/btnObrasocial"
+
+              />
+
+        </LinearLayout>
+
+
     </LinearLayout>
+
+
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:text="Medico o paciente"
+              android:text="¿ Que usuario sos ?"
+              android:elevation="3dp"
               android:layout_marginTop="200dp"
               android:textColor="@color/colorWhite"
               android:layout_centerHorizontal="true" android:textSize="24sp" android:textStyle="bold"/>

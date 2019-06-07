@@ -5,10 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignUp_userActivity"
-        android:background="@drawable/back4"
->
-
+        tools:context=".Paciente.SignUpPacienteActivity"
+        android:background="@drawable/back5">
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -16,20 +14,13 @@
             android:layout_marginTop="0dp"
             android:layout_alignParentTop="true">
 
+        <ImageView android:layout_width="100dp"
+                   android:layout_height="100dp"
+                   android:src="@drawable/pac"
+                   android:layout_gravity="center_horizontal"
+                   android:layout_marginTop="50dp"
+                  />
 
-
-        <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-
-                android:id="@+id/CircleImageViewSignUp"
-
-                app:civ_border_width="3dp"
-                app:civ_border_color="@color/colorBlack"
-                android:src="@mipmap/ic_launcher"
-                />
 
 
         <EditText
@@ -42,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/namebox"/>
+                android:id="@+id/nombrebox"/>
 
         <EditText
                 android:layout_marginStart="20dp"
@@ -54,8 +45,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/surnamebox"/>
+                android:id="@+id/apellidobox"/>
 
+        <EditText
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="DNI"
+                android:singleLine="true"
+                android:inputType="number"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/dnibox"/>
 
         <EditText
                 android:layout_marginStart="20dp"
@@ -63,12 +66,13 @@
                 android:layout_marginTop="20dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_user"
                 android:singleLine="true"
                 android:drawablePadding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/emailbox"/>
+                android:id="@+id/emailbox" android:drawableLeft="@drawable/ic_user"/>
 
         <EditText
                 android:layout_marginStart="20dp"
@@ -76,12 +80,13 @@
                 android:layout_marginTop="20dp"
                 android:hint="Password"
                 android:singleLine="true"
+                android:drawableStart="@drawable/ic_password"
                 android:inputType="textPassword"
                 android:drawablePadding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/passwordbox"/>
+                android:id="@+id/passwordbox" android:drawableLeft="@drawable/ic_password"/>
 
         <EditText
                 android:layout_marginStart="20dp"
@@ -89,21 +94,39 @@
                 android:layout_marginTop="20dp"
                 android:hint="Fecha de nacimiento"
                 android:singleLine="true"
-                android:inputType="datetime"
+                android:inputType="date"
                 android:drawablePadding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/datebox"/>
+                android:id="@+id/fechabox"/>
+
+        <EditText
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Obra social"
+                android:singleLine="true"
+                android:inputType="text"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/obrasocialbox"/>
+
+
+
+
+
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btnroundred"
+                android:background="@drawable/btnround"
                 android:text="Sign Up"
                 android:textAllCaps="false"
                 android:textSize="21sp"
-                android:id="@+id/btnSignUpConfirm"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="30dp"
+                android:id="@+id/btnSignUpPaciente"/>
 
     </LinearLayout>
 </RelativeLayout>

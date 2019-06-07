@@ -27,12 +27,12 @@
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btnround"
+                    android:background="@null"
                     app:srcCompat="@drawable/acne" android:id="@+id/btnDermatologia"/>
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/receta"
-                    android:background="@drawable/btnround"
+                    android:background="@null"
                     android:id="@+id/btnRecetas"
                     android:layout_marginStart="30dp"/>
 
@@ -41,6 +41,7 @@
     </LinearLayout>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="Elija una funcionalidad"
+              android:elevation="2dp"
               android:layout_marginTop="-100dp"
               android:textColor="@color/colorWhite"
               android:layout_centerHorizontal="true" android:textSize="24sp" android:textStyle="bold"/>
