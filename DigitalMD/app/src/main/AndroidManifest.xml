@@ -16,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Medico.MedicoLandingActivity">
+        </activity>
         <activity android:name=".Medico.SignUpMedicoActivity">
         </activity>
         <activity android:name=".Paciente.SignUpPacienteActivity">

@@ -8,6 +8,7 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.fiuba.digitalmd.Medico.MedicoLandingActivity
 import com.fiuba.digitalmd.Medico.SwipeActivity
 import com.fiuba.digitalmd.Paciente.MisDiagnosticosActivity
 import com.google.android.gms.common.util.ArrayUtils.contains
@@ -82,7 +83,7 @@ class SignInActivity : AppCompatActivity() {
                             if (data.contains("paciente", ignoreCase = true))
                                 startActivity(Intent(baseContext, MisDiagnosticosActivity::class.java))
                             if (data.contains("medico", ignoreCase = true))
-                                startActivity(Intent(baseContext, SwipeActivity::class.java))
+                                startActivity(Intent(baseContext, MedicoLandingActivity::class.java))
 
                         }
                     })

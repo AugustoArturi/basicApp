@@ -36,10 +36,9 @@ class SwipeActivity : AppCompatActivity() {
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
-
-                   for (userSnapshot in p0.children) {
-                       val user = userSnapshot.getValue(Paciente::class.java)
-                       listPacientes.add(user!!)
+                      p0.children.forEach {
+                          val user = it.getValue(Paciente::class.java)
+                          listPacientes.add(user!!)
 
 
                    }

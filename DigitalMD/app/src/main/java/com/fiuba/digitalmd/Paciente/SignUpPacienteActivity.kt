@@ -1,18 +1,23 @@
 package com.fiuba.digitalmd.Paciente
 
+
 import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+
 import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.*
-import kotlinx.android.synthetic.main.activity_sign_up_user.*
+
 import kotlinx.android.synthetic.main.activity_sign_up_user.emailbox
 import kotlinx.android.synthetic.main.activity_sign_up_user.passwordbox
 
@@ -42,7 +47,7 @@ class SignUpPacienteActivity : AppCompatActivity() {
         val obrasocial =  obrasocialbox.text.toString()
 
 
-        val user = User(name, apellido, dni, email, fecha, obrasocial, "paciente", 5)
+        val user = User(name, apellido, dni, email, fecha, obrasocial, "paciente")
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -117,5 +122,7 @@ class SignUpPacienteActivity : AppCompatActivity() {
 
         return true
     }
+
+
 
 }

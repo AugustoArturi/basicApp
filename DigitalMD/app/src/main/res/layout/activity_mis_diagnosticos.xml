@@ -21,7 +21,9 @@
 
             app:titleTextColor="@color/colorPrimary"
             app:title="Name"/>
-
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="Mis consultas" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
+    />
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="450dp"

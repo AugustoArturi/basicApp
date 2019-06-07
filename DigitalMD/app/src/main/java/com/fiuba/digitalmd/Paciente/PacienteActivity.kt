@@ -96,8 +96,8 @@ class PacienteActivity : AppCompatActivity() {
 
     private fun createUser(url: String) {
         val uid = FirebaseAuth.getInstance().uid
-        val fotosDisp = InfoActual.getUsuarioActual().fotosDisp
-        val database = FirebaseDatabase.getInstance().getReference("/diagnosticos/$uid/$fotosDisp")
+        //val fotosDisp = InfoActual.getUsuarioActual().fotosDisp
+        val database = FirebaseDatabase.getInstance().getReference("/diagnosticos/$uid")
         val nombre = InfoActual.getUsuarioActual().nombre
         val apellido = InfoActual.getUsuarioActual().apellido
         val desc = etComentario.text.toString()
@@ -108,8 +108,8 @@ class PacienteActivity : AppCompatActivity() {
                 Log.d("PacienteActivity", "Paciente added to database")
             }
 
-        val actualizarData = FirebaseDatabase.getInstance().getReference("signup/$uid")
-        actualizarData.child("/fotosDisp").setValue(InfoActual.getUsuarioActual().fotosDisp-1)
+       /* val actualizarData = FirebaseDatabase.getInstance().getReference("signup/$uid")
+        actualizarData.child("/fotosDisp").setValue(InfoActual.getUsuarioActual().fotosDisp-1)*/
     }
 
 

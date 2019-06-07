@@ -59,18 +59,18 @@ class MisDiagnosticosActivity : AppCompatActivity() {
                     toolbar.title = InfoActual.getUsuarioActual().nombre + " " +InfoActual.getUsuarioActual().apellido
                 }
                 else {
-                         p0.children.forEach {
-                            val paciente = it.getValue(Paciente::class.java)
-                            toolbar.title = paciente!!.nombre + " "+ paciente!!.apellido
-                            adapter.add(PacienteItem(paciente!!))
-                        }
 
+                    val paciente = p0.getValue(Paciente::class.java)
+                    toolbar.title = paciente!!.nombre + " " + paciente!!.apellido
+                    adapter.add(PacienteItem(paciente!!))
+                }
 
+                    rvMisDiagnosticos.adapter = adapter
                }
 
-        }
+
         })
-        rvMisDiagnosticos.adapter = adapter
+
     }
 
     private fun leerUsuarioDeFirebase() {
