@@ -16,6 +16,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Medico.VerRecetasMedicoActivity">
+        </activity>
+        <activity
+                android:name=".Medico.HacerRecetaActivity"
+                android:label="@string/title_activity_hacer_receta"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".Medico.MedicoLandingActivity">
         </activity>
         <activity android:name=".Medico.SignUpMedicoActivity">
