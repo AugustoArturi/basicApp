@@ -9,7 +9,6 @@ import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
-import com.fiuba.digitalmd.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -54,7 +53,7 @@ class MisDiagnosticosActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
 
                 if(!p0.exists()){
-                    adapter.add(Vacio())
+                    adapter.add(Vac())
                     rvMisDiagnosticos.adapter = adapter
                     toolbar.title = InfoActual.getUsuarioActual().nombre + " " +InfoActual.getUsuarioActual().apellido
                 }
@@ -109,7 +108,7 @@ class PacienteItem(val paciente: Paciente) : Item<ViewHolder>() {
 }
 
 
-class Vacio() : Item<ViewHolder>() {
+class Vac() : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.txtResultado.text = "No tenes diagnosticos"
         viewHolder.itemView.txtDesc.text = ""

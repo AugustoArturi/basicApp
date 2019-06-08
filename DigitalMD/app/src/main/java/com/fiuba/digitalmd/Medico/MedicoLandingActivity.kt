@@ -30,6 +30,14 @@ class MedicoLandingActivity : AppCompatActivity() {
         btnHacerDiagnosticos.setOnClickListener {
             startActivity(Intent(baseContext, SwipeActivity::class.java))
         }
+
+        btnNuevaReceta.setOnClickListener {
+            startActivity(Intent(baseContext, HacerRecetaActivity::class.java))
+        }
+
+        btnVerRecetas.setOnClickListener {
+            startActivity(Intent(baseContext, VerRecetasMedicoActivity::class.java))
+        }
     }
 
     private fun setViews(toolbar: Toolbar) {
