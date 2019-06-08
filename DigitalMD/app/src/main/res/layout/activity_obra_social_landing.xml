@@ -5,8 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Paciente.MisRecetasActivity">
-
+        tools:context=".ObraSocial.ObraSocialLandingActivity">
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                   android:orientation="vertical"
                   android:layout_centerVertical="true">
@@ -22,13 +21,13 @@
                 app:titleTextColor="@color/colorPrimary"
                 app:title="Digital-MD"/>
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:text="Mis recetas" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
+                  android:text="Recetas de la obra social" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
                   android:layout_marginStart="90dp"
         />
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rvMisRecetasPaciente"
+                android:id="@+id/rvMisRecetasObraSocial"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 

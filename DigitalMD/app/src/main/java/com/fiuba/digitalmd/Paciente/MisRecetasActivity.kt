@@ -1,5 +1,6 @@
 package com.fiuba.digitalmd.Paciente
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,7 +18,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_hacer_receta.*
-import kotlinx.android.synthetic.main.activity_ver_recetas_medico.*
+import kotlinx.android.synthetic.main.activity_mis_recetas.*
 import kotlinx.android.synthetic.main.receta_row.view.*
 
 class MisRecetasActivity : AppCompatActivity() {
@@ -62,9 +63,9 @@ class MisRecetasActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
 
                 if (!p0.exists()) {
-                    adapter.add(Vaci())
-                    rvMisRecetasMedico.adapter = adapter
-
+                    //adapter.add(Vaci())
+                    //rvMisRecetasPaciente.adapter = adapter
+                    //finish()
                 } else {
 
                     p0.children.forEach {
@@ -72,7 +73,7 @@ class MisRecetasActivity : AppCompatActivity() {
                         adapter.add(ItemReceta(receta))
                     }
 
-                    rvMisRecetasMedico.adapter = adapter
+                    rvMisRecetasPaciente.adapter = adapter
                 }
             }
         })
@@ -87,7 +88,8 @@ class ItemReceta(val receta: Receta?) : Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
 
-        viewHolder.itemView.matriculabox.text = "Matricula medico: " + receta!!.matricula
+        viewHolder.itemView.dniPacientebox.text = "DNI Paciente: " + receta!!.dniPaciente
+
         viewHolder.itemView.obrasocialbox.text ="Obra social: " + receta.obrasocial
         viewHolder.itemView.diagnosticobox.text = "Diagnostico paciente: " +receta.diagnostico
 
@@ -97,6 +99,8 @@ class ItemReceta(val receta: Receta?) : Item<ViewHolder>() {
         viewHolder.itemView.consumobox.text = "Modo de consumo: " +receta!!.modoConsumo
         viewHolder.itemView.lugarbox.text = "Se receto para: " +receta.lugar
         viewHolder.itemView.fechabox.text = "Fecha: " +receta!!.fecha
+        viewHolder.itemView.idrecetabox.text= "ID receta: " + receta!!.recetaID
+        viewHolder.itemView.matriculabox.text = "Matricula medico: " + receta!!.matricula
 
 
 

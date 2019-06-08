@@ -4,6 +4,8 @@ object InfoActual {
 
     private  var usuario_actual : User = User("","","","","","","")
     private var medico_actual: Medico = Medico("","","","","","","")
+    private var obra_social_actual : ObraSocial = ObraSocial("","","","")
+    private var farmacia_actual : Farmacia = Farmacia("","","","","","")
     private var uidActual : String = ""
     fun setUsuarioActual(user : User){
         usuario_actual = user
@@ -27,5 +29,22 @@ object InfoActual {
 
     fun getUidActual():String{
         return uidActual
+    }
+
+    fun setObraSocialActual(obraSocial: ObraSocial) {
+        obra_social_actual = obraSocial
+    }
+
+    fun getObraSocialActual(): ObraSocial{
+        return obra_social_actual
+    }
+
+    fun setFarmaciaActual(farmacia: Farmacia) {
+        farmacia_actual = farmacia
+    }
+
+    fun getFarmaciaActual(): Farmacia {
+        return farmacia_actual
+
     }
 }

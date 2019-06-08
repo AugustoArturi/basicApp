@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.fiuba.digitalmd.Farmacia.FarmaciaLandingActivity
 import com.fiuba.digitalmd.Medico.MedicoLandingActivity
+import com.fiuba.digitalmd.ObraSocial.ObraSocialLandingActivity
 import com.fiuba.digitalmd.Paciente.LandingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -81,6 +83,10 @@ class SignInActivity : AppCompatActivity() {
                                 startActivity(Intent(baseContext, LandingActivity::class.java))
                             if (data.contains("medico", ignoreCase = true))
                                 startActivity(Intent(baseContext, MedicoLandingActivity::class.java))
+                            if (data.contains("farmacia", ignoreCase = true))
+                                startActivity(Intent(baseContext, FarmaciaLandingActivity::class.java))
+                            if (data.contains("obra social", ignoreCase = true))
+                                startActivity(Intent(baseContext, ObraSocialLandingActivity::class.java))
 
                         }
                     })

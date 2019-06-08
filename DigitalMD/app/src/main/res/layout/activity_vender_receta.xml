@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Paciente.MisRecetasActivity">
+        tools:context=".Farmacia.VenderRecetaActivity">
+
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                   android:orientation="vertical"
@@ -21,16 +22,21 @@
 
                 app:titleTextColor="@color/colorPrimary"
                 app:title="Digital-MD"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:text="Mis recetas" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
-                  android:layout_marginStart="90dp"
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="ID RECETA" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
+                  android:layout_marginStart="10dp" android:id="@+id/et_idReceta"
         />
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:id="@+id/btnBuscarReceta" android:text="Buscar receta"  android:background="@drawable/btnround" />
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rvMisRecetasPaciente"
+                android:id="@+id/rvReceta"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_marginTop="20dp"/>
+
+
 
 
 

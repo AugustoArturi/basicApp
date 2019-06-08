@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
+import com.fiuba.digitalmd.Paciente.ItemReceta
 import com.fiuba.digitalmd.Paciente.Vac
 import com.fiuba.digitalmd.R
 import com.google.firebase.database.DataSnapshot
@@ -55,29 +56,7 @@ class VerRecetasMedicoActivity : AppCompatActivity() {
     }
 }
 
-class ItemReceta(val receta: Receta?) : Item<ViewHolder>() {
 
-    override fun getLayout(): Int {
-        return R.layout.receta_row
-    }
-
-    override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.itemView.dniPacientebox.text = "DNI paciente: " + receta!!.dniPaciente
-        viewHolder.itemView.obrasocialbox.text ="Obra social: " + receta.obrasocial
-        viewHolder.itemView.diagnosticobox.text = "Diagnostico paciente: " +receta.diagnostico
-
-        viewHolder.itemView.farmacobox.text = "Farmaco dado: " +receta!!.farmaco
-        viewHolder.itemView.cantidadbox.text = "Cantidad: " +receta.cantidadFarmaco
-
-        viewHolder.itemView.consumobox.text = "Modo de consumo: " +receta!!.modoConsumo
-        viewHolder.itemView.lugarbox.text = "Se receto para: " +receta.lugar
-        viewHolder.itemView.fechabox.text = "Fecha: " +receta!!.fecha
-
-
-
-    }
-
-}
 
 class Vaci() : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
@@ -90,6 +69,7 @@ class Vaci() : Item<ViewHolder>() {
         viewHolder.itemView.consumobox.text = ""
         viewHolder.itemView.lugarbox.text =""
         viewHolder.itemView.fechabox.text = ""
+        viewHolder.itemView.matriculabox.text =""
 
 
     }

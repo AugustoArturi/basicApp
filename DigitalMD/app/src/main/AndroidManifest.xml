@@ -16,6 +16,19 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Farmacia.VenderRecetaActivity">
+        </activity>
+        <activity android:name=".Farmacia.FarmaciaLandingActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".SignInActivity"/>
+        </activity>
+        <activity android:name=".ObraSocial.ObraSocialLandingActivity">
+        </activity>
+        <activity android:name=".ObraSocial.SignUpObraSocialActivity">
+        </activity>
+        <activity android:name=".Farmacia.SignUpFarmaciaActivity">
+        </activity>
         <activity android:name=".Paciente.MisRecetasActivity">
         </activity>
         <activity android:name=".Medico.VerRecetasMedicoActivity">
