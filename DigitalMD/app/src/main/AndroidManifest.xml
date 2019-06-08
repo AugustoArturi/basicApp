@@ -16,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Paciente.MisRecetasActivity">
+        </activity>
         <activity android:name=".Medico.VerRecetasMedicoActivity">
         </activity>
         <activity
@@ -46,9 +48,9 @@
                 android:label="@string/title_activity_dermatologia">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".LandingActivity"/>
+                    android:value=".Paciente.LandingActivity"/>
         </activity>
-        <activity android:name=".LandingActivity">
+        <activity android:name=".Paciente.LandingActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
