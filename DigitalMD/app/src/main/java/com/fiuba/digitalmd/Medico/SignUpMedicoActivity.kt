@@ -5,17 +5,17 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.util.Patterns
-import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Models.Medico
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
+import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -122,15 +122,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
             return false
         }
         return true
-    }
-
-    private fun validarNoVacio(editText: EditText, msgError: String): Boolean {
-        if (editText.text.toString().isEmpty()) {
-            editText.error = msgError
-            editText.requestFocus()
-            return true
-        }
-        return false
     }
 
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)

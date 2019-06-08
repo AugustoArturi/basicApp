@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
+import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -73,29 +74,13 @@ class SignUpPacienteActivity : AppCompatActivity() {
 
 
     private fun validarCampos(): Boolean {
-        if (nombrebox.text.toString().isEmpty()) {
-            nombrebox.error = "Por favor ingresa tu nombre"
-            nombrebox.requestFocus()
-            return false
-        }
-
-        if (apellidobox.text.toString().isEmpty()) {
-            apellidobox.error = "Por favor ingresa tu apellido"
-            apellidobox.requestFocus()
-            return false
-        }
-
-        if (dnibox.text.toString().isEmpty()) {
-            dnibox.error = "Por favor ingresa tu DNI"
-            dnibox.requestFocus()
-            return false
-        }
-
-        if (emailbox.text.toString().isEmpty()) {
-            emailbox.error = "Por favor ingresa tu email"
-            emailbox.requestFocus()
-            return false
-        }
+        if (validarNoVacio(nombrebox, "Por favor ingresa tu nombre")) return false
+        if (validarNoVacio(apellidobox,  "Por favor ingresa tu apellido")) return false
+        if (validarNoVacio(dnibox, "Por favor ingresa tu DNI")) return false
+        if (validarNoVacio(emailbox, "Por favor ingresa tu email")) return false
+        if (validarNoVacio(passwordbox, "Por favor ingresa una contraseña")) return false
+        if (validarNoVacio(fechabox, "Por favor ingresa tu fecha de nacimiento")) return false
+        if (validarNoVacio(obrasocialbox, "Por favor ingresa tu obra social")) return false
 
         if (!Patterns.EMAIL_ADDRESS.matcher(emailbox.text.toString()).matches()) {
             emailbox.error = "Por favor ingresa un email valido"
@@ -103,20 +88,9 @@ class SignUpPacienteActivity : AppCompatActivity() {
             return false
         }
 
-        if (passwordbox.text.toString().isEmpty()) {
-            passwordbox.error = "Por favor ingresa una contraseña"
+        if (passwordbox.text.toString().length < 6) {
+            passwordbox.error = "Por favor ingresa una contraseña al menos 6 caracteres"
             passwordbox.requestFocus()
-            return false
-        }
-
-        if (fechabox.text.toString().isEmpty()) {
-            fechabox.error = "Por favor ingresa tu fecha de nacimiento"
-            fechabox.requestFocus()
-            return false
-        }
-        if (obrasocialbox.text.toString().isEmpty()) {
-            obrasocialbox.error = "Por favor ingresa tu obra social"
-            obrasocialbox.requestFocus()
             return false
         }
 
