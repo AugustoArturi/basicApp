@@ -10,25 +10,21 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.util.Patterns
+import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.fiuba.digitalmd.Models.Medico
-import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_paciente.*
 import kotlinx.android.synthetic.main.activity_sign_up_medico.*
-import kotlinx.android.synthetic.main.activity_sign_up_paciente.*
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.apellidobox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.emailbox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.nombrebox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.obrasocialbox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.passwordbox
-import kotlinx.android.synthetic.main.activity_sign_up_user.*
-import java.util.*
 
 class SignUpMedicoActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -49,7 +45,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
         }
     }
 
-
     private fun subirDoctorAFirebase(url: String) {
 
         val name = nombrebox.text.toString()
@@ -58,7 +53,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
         val email=emailbox.text.toString()
         val password =  passwordbox.text.toString()
         val obrasocial =  obrasocialbox.text.toString()
-
 
         val medico = Medico(name, apellido, matricula, email, obrasocial, "medico", url)
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -69,8 +63,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Sign up failed", Toast.LENGTH_SHORT).show()
                 }
             }
-
-
     }
 
     private fun subirImagenAFirebase(){
@@ -92,8 +84,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
                 val progress = 100 * taskSnapShot.bytesTransferred / taskSnapShot.totalByteCount
                 progressDialog.setMessage("% ${progress}")
             }
-
-
     }
 
     private fun subirloAFirebase(medico: Medico) {
@@ -109,50 +99,38 @@ class SignUpMedicoActivity : AppCompatActivity() {
 
 
     private fun validarCampos(): Boolean {
-        if (nombrebox.text.toString().isEmpty()) {
-            nombrebox.error = "Por favor ingresa tu nombre"
-            nombrebox.requestFocus()
-            return false
-        }
-
-        if (apellidobox.text.toString().isEmpty()) {
-            apellidobox.error = "Por favor ingresa tu apellido"
-            apellidobox.requestFocus()
-            return false
-        }
-
-        if (matriculabox.text.toString().isEmpty()) {
-            matriculabox.error = "Por favor ingresa tu matricula"
-            matriculabox.requestFocus()
-            return false
-        }
-
-        if (emailbox.text.toString().isEmpty()) {
-            emailbox.error = "Por favor ingresa tu email"
-            emailbox.requestFocus()
-            return false
-        }
+        if (validarNoVacio(nombrebox, "Por favor ingresa tu nombre")) return false
+        if (validarNoVacio(apellidobox, "Por favor ingresa tu apellido")) return false
+        if (validarNoVacio(matriculabox, "Por favor ingresa tu matricula")) return false
+        if (validarNoVacio(emailbox, "Por favor ingresa tu email")) return false
+        if (validarNoVacio(passwordbox, "Por favor ingresa una contraseña")) return false
+        if (validarNoVacio(obrasocialbox, "Por favor ingresa tu obra social")) return false
 
         if (!Patterns.EMAIL_ADDRESS.matcher(emailbox.text.toString()).matches()) {
             emailbox.error = "Por favor ingresa un email valido"
             emailbox.requestFocus()
             return false
         }
-
-        if (passwordbox.text.toString().isEmpty()) {
-            passwordbox.error = "Por favor ingresa una contraseña"
+        if (passwordbox.text.toString().length < 6) {
+            passwordbox.error = "El password debe tener al menos 6 caracteres"
             passwordbox.requestFocus()
             return false
         }
-
-
-        if (obrasocialbox.text.toString().isEmpty()) {
-            obrasocialbox.error = "Por favor ingresa tu obra social"
-            obrasocialbox.requestFocus()
+        if (photoUri == null) {
+            btnSubirFotoMedico.error = "Por favor elija o suba una foto"
+            btnSubirFotoMedico.requestFocus()
             return false
         }
-
         return true
+    }
+
+    private fun validarNoVacio(editText: EditText, msgError: String): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            editText.error = msgError
+            editText.requestFocus()
+            return true
+        }
+        return false
     }
 
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -165,8 +143,6 @@ class SignUpMedicoActivity : AppCompatActivity() {
             CircleImageViewMedico.setImageBitmap(bitmap)
             btnSubirFotoMedico.background = null
             btnSubirFotoMedico.text = null
-
-
         }
     }
 }
