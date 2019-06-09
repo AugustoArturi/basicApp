@@ -6,10 +6,13 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
+import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Models.idReceta
 import com.fiuba.digitalmd.Paciente.PacienteActivity
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.ValidacionUtils
+import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -35,7 +38,7 @@ class HacerRecetaActivity : AppCompatActivity() {
     }
 
     private fun subirRecetaAFirebase() {
-         val matricula = matriculabox.text.toString()
+        val matricula = InfoActual.getMedicoActual().matricula
         val dniPaciente = dniPacientebox.text.toString()
         val obrasocial = obrasocialbox.text.toString()
         val diagnostico = diagnosticobox.text.toString()
@@ -72,62 +75,14 @@ class HacerRecetaActivity : AppCompatActivity() {
     }
 
     private fun validarCampos(): Boolean {
-        if (matriculabox.text.toString().isEmpty()) {
-            matriculabox.error = "Por favor ingresa tu matricula"
-            matriculabox.requestFocus()
-            return false
-        }
-
-        if (dniPacientebox.text.toString().isEmpty()) {
-            dniPacientebox.error = "Por favor ingresa DNI del paciente"
-            dniPacientebox.requestFocus()
-            return false
-        }
-        if (obrasocialbox.text.toString().isEmpty()) {
-            obrasocialbox.error = "Por favor ingresa DNI del paciente"
-            obrasocialbox.requestFocus()
-            return false
-        }
-
-        if (diagnosticobox.text.toString().isEmpty()) {
-            diagnosticobox.error = "Por favor ingresa el diagnostico"
-            diagnosticobox.requestFocus()
-            return false
-        }
-
-        if (farmacobox.text.toString().isEmpty()) {
-            farmacobox.error = "Por favor ingresa el farmaco"
-            farmacobox.requestFocus()
-            return false
-        }
-
-
-        if (cantidadbox.text.toString().isEmpty()) {
-            cantidadbox.error = "Por favor ingresa cantidad del farmaco"
-            cantidadbox.requestFocus()
-            return false
-        }
-
-
-        if (consumobox.text.toString().isEmpty()) {
-            consumobox.error = "Por favor ingresa la forma de consumo del farmaco"
-            consumobox.requestFocus()
-            return false
-        }
-
-        if (lugarbox.text.toString().isEmpty()) {
-            lugarbox.error = "Por favor ingresa el lugar donde trabajas"
-            lugarbox.requestFocus()
-            return false
-        }
-
-        if (fechabox.text.toString().isEmpty()) {
-            fechabox.error = "Por favor ingresa la fecha"
-            fechabox.requestFocus()
-            return false
-        }
-
-
+        validarNoVacio(dniPacientebox, "Por favor ingresa DNI del paciente")
+        validarNoVacio(obrasocialbox, "Por favor ingresa DNI del paciente")
+        validarNoVacio(diagnosticobox, "Por favor ingresa el diagnostico")
+        validarNoVacio(farmacobox, "Por favor ingresa el farmaco")
+        validarNoVacio(cantidadbox, "Por favor ingresa cantidad del farmaco")
+        validarNoVacio(consumobox, "Por favor ingresa la forma de consumo del farmaco")
+        validarNoVacio(lugarbox, "Por favor ingresa el lugar donde trabajas")
+        validarNoVacio(fechabox, "Por favor ingresa la fecha")
         return true
 
     }
