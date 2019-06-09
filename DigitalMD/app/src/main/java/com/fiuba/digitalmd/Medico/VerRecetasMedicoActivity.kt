@@ -56,26 +56,24 @@ class VerRecetasMedicoActivity : AppCompatActivity() {
     }
 }
 
-
-
 class Vaci() : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.itemView.dniPacientebox.text = "No tenes recetas"
-        viewHolder.itemView.diagnosticobox.text = ""
+        val itemView = viewHolder.itemView
+        itemView.dniPacientebox.text = "No tenes recetas"
+        itemView.obrasocialbox.text = ""
+        itemView.diagnosticobox.text = ""
+        itemView.matriculabox.text =""
 
-        viewHolder.itemView.farmacobox.text = ""
-        viewHolder.itemView.cantidadbox.text =""
+        itemView.farmacobox.text = ""
+        itemView.cantidadbox.text =""
 
-        viewHolder.itemView.consumobox.text = ""
-        viewHolder.itemView.lugarbox.text =""
-        viewHolder.itemView.fechabox.text = ""
-        viewHolder.itemView.matriculabox.text =""
-
-
+        itemView.consumobox.text = ""
+        itemView.lugarbox.text =""
+        itemView.fechabox.text = ""
     }
 
     override fun getLayout(): Int {
-        return R.layout.diagnostico_row
+        return R.layout.receta_row
     }
 
 }
