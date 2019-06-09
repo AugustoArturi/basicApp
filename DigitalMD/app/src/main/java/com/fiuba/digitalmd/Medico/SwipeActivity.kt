@@ -12,11 +12,8 @@ import kotlinx.android.synthetic.main.activity_swipe.*
 
 
 class SwipeActivity : AppCompatActivity() {
-
     lateinit var adapter: SwipeAdapter
     lateinit var users : DatabaseReference
-    private  var userList = ArrayList<Paciente>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,27 +24,27 @@ class SwipeActivity : AppCompatActivity() {
     }
 
     private fun fetchDataFromFirebase() {
+        users = FirebaseDatabase.getInstance().getReference("/diagnosticos")
+        users.addListenerForSingleValueEvent(object : ValueEventListener {
+            var listPacientes:MutableList<Paciente> = ArrayList()
+            override fun onCancelled(p0: DatabaseError) {
+            }
 
-            var contador : Int = 0
-            users = FirebaseDatabase.getInstance().getReference("/diagnosticos")
-
-            users.addListenerForSingleValueEvent(object : ValueEventListener {
-                var listPacientes:MutableList<Paciente> = ArrayList()
-                override fun onCancelled(p0: DatabaseError) {
-                }
-
-                override fun onDataChange(p0: DataSnapshot) {
-                      p0.children.forEach {
-                          val user = it.getValue(Paciente::class.java)
+            override fun onDataChange(p0: DataSnapshot) {
+                  p0.children.forEach {
+                      val user = it.getValue(Paciente::class.java)
+                      if (deberiaMostrarDiagnostico(user))
                           listPacientes.add(user!!)
+               }
+                loadAdapter(listPacientes)
+            }
 
+        })
+    }
 
-                   }
-                    loadAdapter(listPacientes)
-                }
-
-            })
-
+    private fun deberiaMostrarDiagnostico(paciente: Paciente?): Boolean {
+        return if (paciente == null) false
+            else paciente.estadoDiagnostico == "En espera"
     }
 
     private fun loadAdapter(listPacientes: MutableList<Paciente>) {
