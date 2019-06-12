@@ -2,8 +2,8 @@ package com.fiuba.digitalmd.Models
 
 object InfoActual {
 
-    private  var usuario_actual : User = User("","","","","","","")
-    private var medico_actual: Medico = Medico("","","","","","","")
+    private var usuario_actual : User = User("","","","","","","")
+    private var medico_actual : Medico = Medico("","","","","","","")
     private var obra_social_actual : ObraSocial = ObraSocial("","","","")
     private var farmacia_actual : Farmacia = Farmacia("","","","","","")
     private var uidActual : String = ""
@@ -45,6 +45,12 @@ object InfoActual {
 
     fun getFarmaciaActual(): Farmacia {
         return farmacia_actual
+    }
 
+    fun logout() {
+        usuario_actual = User("","","","","","","")
+        medico_actual = Medico("","","","","","","")
+        obra_social_actual = ObraSocial("","","","")
+        farmacia_actual = Farmacia("","","","","","")
     }
 }

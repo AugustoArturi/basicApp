@@ -2,16 +2,11 @@ package com.fiuba.digitalmd.Medico
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
-import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Models.idReceta
-import com.fiuba.digitalmd.Paciente.PacienteActivity
 import com.fiuba.digitalmd.R
-import com.fiuba.digitalmd.ValidacionUtils
+import com.fiuba.digitalmd.SignedInActivity
 import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -21,7 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_hacer_receta.*
 
 
-class HacerRecetaActivity : AppCompatActivity() {
+class HacerRecetaActivity : SignedInActivity() {
     private lateinit var mAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

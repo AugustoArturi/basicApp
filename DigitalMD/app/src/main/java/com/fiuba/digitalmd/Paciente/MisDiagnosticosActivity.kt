@@ -1,7 +1,6 @@
 package com.fiuba.digitalmd.Paciente
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -9,6 +8,7 @@ import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,7 +21,7 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_mis_diagnosticos.*
 import kotlinx.android.synthetic.main.diagnostico_row.view.*
 
-class MisDiagnosticosActivity : AppCompatActivity() {
+class MisDiagnosticosActivity : SignedInActivity() {
 
 
 

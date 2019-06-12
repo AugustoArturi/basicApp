@@ -1,14 +1,13 @@
 package com.fiuba.digitalmd.Medico
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Medico
-import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -17,7 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_medico_landing.*
 
-class MedicoLandingActivity : AppCompatActivity() {
+class MedicoLandingActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

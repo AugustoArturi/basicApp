@@ -1,14 +1,12 @@
 package com.fiuba.digitalmd.Paciente
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.fiuba.digitalmd.Medico.Vaci
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_hacer_receta.*
 import kotlinx.android.synthetic.main.activity_mis_recetas.*
 import kotlinx.android.synthetic.main.receta_row.view.*
 
-class MisRecetasActivity : AppCompatActivity() {
+class MisRecetasActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

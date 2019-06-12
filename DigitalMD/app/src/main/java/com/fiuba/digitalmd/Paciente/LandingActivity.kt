@@ -2,13 +2,11 @@ package com.fiuba.digitalmd.Paciente
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.fiuba.digitalmd.ElegirUsuarioActivity
 import com.fiuba.digitalmd.R
-import com.fiuba.digitalmd.RecetasActivity
+import com.fiuba.digitalmd.SignedInActivity
 import kotlinx.android.synthetic.main.activity_landing.*
 
-class LandingActivity : AppCompatActivity() {
+class LandingActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,24 +7,21 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-
 import android.os.Bundle
 import android.provider.MediaStore
-
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import com.fiuba.digitalmd.ElegirUsuarioActivity
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_paciente.*
 
-class PacienteActivity : AppCompatActivity() {
+class PacienteActivity : SignedInActivity() {
     var uri: Uri? = null
     var photoUri: Uri? = null
     var image_uri: Uri? = null

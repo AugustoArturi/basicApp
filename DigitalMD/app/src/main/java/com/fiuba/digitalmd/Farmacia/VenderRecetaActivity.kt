@@ -1,25 +1,22 @@
 package com.fiuba.digitalmd.Farmacia
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Paciente.ItemReceta
 import com.fiuba.digitalmd.R
-import com.fiuba.digitalmd.SignInActivity
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_farmacia_landing.*
 import kotlinx.android.synthetic.main.activity_vender_receta.*
 
-class VenderRecetaActivity : AppCompatActivity() {
+class VenderRecetaActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
