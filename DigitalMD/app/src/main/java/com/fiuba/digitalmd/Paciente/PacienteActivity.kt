@@ -93,7 +93,6 @@ class PacienteActivity : SignedInActivity() {
     }
 
     private fun createUser(url: String) {
-        val uid = FirebaseAuth.getInstance().uid
         //val fotosDisp = InfoActual.getUsuarioActual().fotosDisp
         val database = FirebaseDatabase.getInstance().getReference("/diagnosticos")
         val nombre = InfoActual.getUsuarioActual().nombre
@@ -101,8 +100,9 @@ class PacienteActivity : SignedInActivity() {
         val desc = etComentario.text.toString()
         val dni = InfoActual.getUsuarioActual().dni
 
-        val paciente = Paciente(nombre, apellido,dni, url, desc, "En espera","","", uid!!)
-        database.push().setValue(paciente)
+        val key = database.push().key!!
+        val paciente = Paciente(nombre, apellido,dni, url, desc, "En espera","","", key)
+        database.child(key).setValue(paciente)
             .addOnSuccessListener {
                 Log.d("PacienteActivity", "Paciente added to database")
             }
