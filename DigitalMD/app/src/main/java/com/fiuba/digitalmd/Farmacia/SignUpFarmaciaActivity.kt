@@ -5,31 +5,25 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Models.Farmacia
-import com.fiuba.digitalmd.Models.Medico
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_sign_up_farmacia.*
-import kotlinx.android.synthetic.main.activity_sign_up_medico.*
 import kotlinx.android.synthetic.main.activity_sign_up_medico.CircleImageViewMedico
-import kotlinx.android.synthetic.main.activity_sign_up_medico.apellidobox
-import kotlinx.android.synthetic.main.activity_sign_up_medico.btnSignUpDoctor
 import kotlinx.android.synthetic.main.activity_sign_up_medico.btnSubirFotoMedico
 import kotlinx.android.synthetic.main.activity_sign_up_medico.emailbox
 import kotlinx.android.synthetic.main.activity_sign_up_medico.nombrebox
-import kotlinx.android.synthetic.main.activity_sign_up_medico.obrasocialbox
 import kotlinx.android.synthetic.main.activity_sign_up_medico.passwordbox
-import kotlinx.android.synthetic.main.activity_sign_up_paciente.*
 
 class SignUpFarmaciaActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth

@@ -2,11 +2,9 @@ package com.fiuba.digitalmd.Paciente
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
-import com.fiuba.digitalmd.Models.User
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -22,9 +20,6 @@ import kotlinx.android.synthetic.main.activity_mis_diagnosticos.*
 import kotlinx.android.synthetic.main.diagnostico_row.view.*
 
 class MisDiagnosticosActivity : SignedInActivity() {
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mis_diagnosticos)
@@ -32,7 +27,6 @@ class MisDiagnosticosActivity : SignedInActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
         setSupportActionBar(toolbar)
-        leerUsuarioDeFirebase()
 
         leerDiagnosticosDeFirebase(toolbar)
 
@@ -71,25 +65,6 @@ class MisDiagnosticosActivity : SignedInActivity() {
         })
 
     }
-
-    private fun leerUsuarioDeFirebase() {
-        val uid = FirebaseAuth.getInstance().uid
-        val ref = FirebaseDatabase.getInstance().getReference("/signup/$uid")
-
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
-
-            override fun onCancelled(p0: DatabaseError) {
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-
-                    val user = p0.getValue(User::class.java)
-                    InfoActual.setUsuarioActual(user!!)
-                    Toast.makeText(baseContext, "Usuario leido", Toast.LENGTH_SHORT).show()
-                }
-            })
-
-        }
 
 }
 

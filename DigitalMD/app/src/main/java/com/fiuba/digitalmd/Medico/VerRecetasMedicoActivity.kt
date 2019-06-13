@@ -1,11 +1,10 @@
 package com.fiuba.digitalmd.Medico
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Paciente.ItemReceta
-import com.fiuba.digitalmd.Paciente.Vac
 import com.fiuba.digitalmd.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Farmacia.FarmaciaLandingActivity
 import com.fiuba.digitalmd.Medico.MedicoLandingActivity
+import com.fiuba.digitalmd.Models.*
 import com.fiuba.digitalmd.ObraSocial.ObraSocialLandingActivity
 import com.fiuba.digitalmd.Paciente.LandingActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -79,15 +80,22 @@ class SignInActivity : AppCompatActivity() {
 
                         override fun onDataChange(p0: DataSnapshot) {
                             val data = p0.value.toString()
-                            if (data.contains("paciente", ignoreCase = true))
+                            if (data.contains("paciente", ignoreCase = true)) {
+                                InfoActual.setUsuarioActual(p0.getValue(User::class.java)!!)
                                 startActivity(Intent(baseContext, LandingActivity::class.java))
-                            if (data.contains("medico", ignoreCase = true))
+                            }
+                            if (data.contains("medico", ignoreCase = true)) {
+                                InfoActual.setMedicoActual(p0.getValue(Medico::class.java)!!)
                                 startActivity(Intent(baseContext, MedicoLandingActivity::class.java))
-                            if (data.contains("farmacia", ignoreCase = true))
+                            }
+                            if (data.contains("farmacia", ignoreCase = true)) {
+                                InfoActual.setFarmaciaActual(p0.getValue(Farmacia::class.java)!!)
                                 startActivity(Intent(baseContext, FarmaciaLandingActivity::class.java))
-                            if (data.contains("obra social", ignoreCase = true))
+                            }
+                            if (data.contains("obra social", ignoreCase = true)) {
+                                InfoActual.setObraSocialActual(p0.getValue(ObraSocial::class.java)!!)
                                 startActivity(Intent(baseContext, ObraSocialLandingActivity::class.java))
-
+                            }
                         }
                     })
 

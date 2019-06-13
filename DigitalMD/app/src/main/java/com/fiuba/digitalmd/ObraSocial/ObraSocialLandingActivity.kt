@@ -28,33 +28,11 @@ class ObraSocialLandingActivity : SignedInActivity() {
         setContentView(R.layout.activity_obra_social_landing)
         val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
         setSupportActionBar(toolbar)
-        leerUsuarioDeFirebase()
-
-
+        cargarRecetasDeFirebase()
     }
 
     override fun onBackPressed() {
         startActivity(Intent(baseContext, SignInActivity::class.java))
-    }
-
-    private fun leerUsuarioDeFirebase() {
-        val uid = FirebaseAuth.getInstance().uid
-        val ref = FirebaseDatabase.getInstance().getReference("/signup/$uid")
-
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
-
-            override fun onCancelled(p0: DatabaseError) {
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-
-                val obraSocial = p0.getValue(ObraSocial::class.java)
-                InfoActual.setObraSocialActual(obraSocial!!)
-                cargarRecetasDeFirebase()
-                //Toast.makeText(baseContext, "Obra Social leido", Toast.LENGTH_SHORT).show()
-            }
-        })
-
     }
 
     private fun cargarRecetasDeFirebase() {
