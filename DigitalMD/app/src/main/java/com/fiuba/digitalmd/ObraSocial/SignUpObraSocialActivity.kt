@@ -128,6 +128,11 @@ class SignUpObraSocialActivity : AppCompatActivity() {
             return false
         }
 
+        if (photoUri.toString().isEmpty()) {
+            btnSubirFotoMedico.error = "Por favor elija o suba una foto"
+            btnSubirFotoMedico.requestFocus()
+            return false
+        }
 
         return true
     }
