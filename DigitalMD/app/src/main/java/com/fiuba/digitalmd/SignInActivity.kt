@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.activity_signin_user.*
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var mAuthDatabase: FirebaseDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin_user)

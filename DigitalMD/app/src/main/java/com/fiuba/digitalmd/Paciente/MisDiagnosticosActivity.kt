@@ -7,10 +7,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
-import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -31,14 +29,17 @@ class MisDiagnosticosActivity : SignedInActivity() {
         toolbar.title = InfoActual.getUsuarioActual().nombre + " " +InfoActual.getUsuarioActual().apellido
         setSupportActionBar(toolbar)
 
-        leerDiagnosticosDeFirebase(toolbar)
+        leerDiagnosticosDeFirebase()
 
         btnNuevaConsulta.setOnClickListener {
             startActivity(Intent(this, PacienteActivity::class.java))
         }
+        btnRefresh.setOnClickListener {
+            leerDiagnosticosDeFirebase()
+        }
     }
 
-    private fun leerDiagnosticosDeFirebase(toolbar:Toolbar) {
+    private fun leerDiagnosticosDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
         val ref = FirebaseDatabase.getInstance().getReference("/diagnosticos")
             .orderByChild("dniPaciente").equalTo(InfoActual.getUsuarioActual().dni)
@@ -61,7 +62,7 @@ class MisDiagnosticosActivity : SignedInActivity() {
                 }
            }
         })
-
+        adapter
     }
 
 }
