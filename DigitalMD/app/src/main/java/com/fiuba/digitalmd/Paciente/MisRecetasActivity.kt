@@ -27,7 +27,8 @@ class MisRecetasActivity : SignedInActivity() {
 
     private fun cargarRecetasDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getUsuarioActual().dni}")
+        val database = FirebaseDatabase.getInstance().getReference("/recetas")
+            .orderByChild("dniPaciente").equalTo(InfoActual.getUsuarioActual().dni)
 
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 

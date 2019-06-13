@@ -28,7 +28,8 @@ class VerRecetasMedicoActivity : AppCompatActivity() {
 
     private fun cargarRecetasDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getMedicoActual().matricula}")
+        val database = FirebaseDatabase.getInstance().getReference("/recetas")
+            .orderByChild("matricula").equalTo(InfoActual.getMedicoActual().matricula)
 
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 

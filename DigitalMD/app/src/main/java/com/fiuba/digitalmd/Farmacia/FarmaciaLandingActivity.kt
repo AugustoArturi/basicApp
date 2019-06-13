@@ -38,8 +38,8 @@ class FarmaciaLandingActivity : SignedInActivity() {
 
     private fun cargarRecetasDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getFarmaciaActual().cuit}")
-
+        val database = FirebaseDatabase.getInstance().getReference("/recetas")
+            .orderByChild("cuitFarmacia").equalTo(InfoActual.getFarmaciaActual().cuit)
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 
             override fun onCancelled(p0: DatabaseError) {

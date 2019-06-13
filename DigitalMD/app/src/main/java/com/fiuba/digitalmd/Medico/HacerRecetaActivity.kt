@@ -25,7 +25,6 @@ class HacerRecetaActivity : SignedInActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-
         btnCrearReceta.setOnClickListener {
             if(validarCampos())
                 subirRecetaAFirebase()
@@ -53,20 +52,11 @@ class HacerRecetaActivity : SignedInActivity() {
                 val idReceta = p0.getValue(idReceta::class.java)
                 database.child("numero").setValue(idReceta!!.numero+1)
                 val receta = Receta(matricula,dniPaciente,obrasocial,diagnostico,farmaco,cantidadFarmaco,modoConsumo,lugar,fecha,idReceta.numero+1)
-                val ref1 =  FirebaseDatabase.getInstance().getReference("/recetas/$dniPaciente/${idReceta.numero+1}")
-                val ref2 = FirebaseDatabase.getInstance().getReference("/recetas/idRecetas/${idReceta.numero+1}")
-                val ref3 = FirebaseDatabase.getInstance().getReference("/recetas/$obrasocial/${idReceta.numero+1}")
-                val ref4 = FirebaseDatabase.getInstance().getReference("/recetas/$matricula/${idReceta.numero+1}")
-                ref1.setValue(receta)
-                ref2.setValue(receta)
-                ref3.setValue(receta)
-                ref4.setValue(receta)
+                val ref =  FirebaseDatabase.getInstance().getReference("/recetas/${idReceta.numero+1}")
+                ref.setValue(receta)
                 startActivity(Intent(baseContext, MedicoLandingActivity::class.java))
             }
         })
-
-
-
     }
 
     private fun validarCampos(): Boolean {

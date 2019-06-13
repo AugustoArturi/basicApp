@@ -83,6 +83,7 @@ class PacienteActivity : SignedInActivity() {
                     Log.d("ProfileAcitivity", "Image added to firebase: ${url.toString()}")
                     val intent = Intent(this, MisDiagnosticosActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
             }
             .addOnProgressListener { taskSnapShot ->
@@ -94,19 +95,17 @@ class PacienteActivity : SignedInActivity() {
     private fun createUser(url: String) {
         val uid = FirebaseAuth.getInstance().uid
         //val fotosDisp = InfoActual.getUsuarioActual().fotosDisp
-        val database = FirebaseDatabase.getInstance().getReference("/diagnosticos/$uid")
+        val database = FirebaseDatabase.getInstance().getReference("/diagnosticos")
         val nombre = InfoActual.getUsuarioActual().nombre
         val apellido = InfoActual.getUsuarioActual().apellido
         val desc = etComentario.text.toString()
+        val dni = InfoActual.getUsuarioActual().dni
 
-        val paciente = Paciente(nombre,apellido, url, desc, "En espera","","", uid!!)
-        database.setValue(paciente)
+        val paciente = Paciente(nombre, apellido,dni, url, desc, "En espera","","", uid!!)
+        database.push().setValue(paciente)
             .addOnSuccessListener {
                 Log.d("PacienteActivity", "Paciente added to database")
             }
-
-       /* val actualizarData = FirebaseDatabase.getInstance().getReference("signup/$uid")
-        actualizarData.child("/fotosDisp").setValue(InfoActual.getUsuarioActual().fotosDisp-1)*/
     }
 
 

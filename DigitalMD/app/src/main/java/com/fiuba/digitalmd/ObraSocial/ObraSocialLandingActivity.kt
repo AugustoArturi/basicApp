@@ -37,7 +37,8 @@ class ObraSocialLandingActivity : SignedInActivity() {
 
     private fun cargarRecetasDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getObraSocialActual().nombre}")
+        val database = FirebaseDatabase.getInstance().getReference("/recetas")
+            .orderByChild("obrasocial").equalTo(InfoActual.getObraSocialActual().nombre)
 
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 
