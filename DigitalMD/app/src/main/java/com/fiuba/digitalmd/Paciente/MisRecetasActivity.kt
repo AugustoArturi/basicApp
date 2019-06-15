@@ -13,7 +13,6 @@ import com.google.firebase.database.ValueEventListener
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_hacer_receta.*
 import kotlinx.android.synthetic.main.activity_mis_recetas.*
 import kotlinx.android.synthetic.main.receta_row.view.*
 
