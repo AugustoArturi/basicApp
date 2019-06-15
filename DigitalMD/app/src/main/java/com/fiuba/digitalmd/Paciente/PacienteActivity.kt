@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_paciente.*
+import java.util.*
 
 class PacienteActivity : SignedInActivity() {
     var uri: Uri? = null
@@ -68,7 +69,7 @@ class PacienteActivity : SignedInActivity() {
             etComentario.requestFocus()
         }
 
-        val uid = FirebaseAuth.getInstance().uid
+        val uid = UUID.randomUUID()
 
         val storage = FirebaseStorage.getInstance().getReference("/images/dermatologia/$uid")
 
