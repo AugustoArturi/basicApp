@@ -1,6 +1,7 @@
 package com.fiuba.digitalmd.Paciente
 
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.R
@@ -21,6 +22,8 @@ class MisRecetasActivity : SignedInActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mis_recetas)
+        val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
+        toolbar.title = toolbar.title.toString() + " - Recetas"
         setSupportActionBar(toolbar)
         cargarRecetasDeFirebase()
     }

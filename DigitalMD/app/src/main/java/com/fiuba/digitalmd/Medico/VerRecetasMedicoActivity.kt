@@ -1,11 +1,12 @@
 package com.fiuba.digitalmd.Medico
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Paciente.ItemReceta
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -13,15 +14,16 @@ import com.google.firebase.database.ValueEventListener
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_hacer_receta.*
 import kotlinx.android.synthetic.main.activity_ver_recetas_medico.*
 import kotlinx.android.synthetic.main.receta_row.view.*
 
-class VerRecetasMedicoActivity : AppCompatActivity() {
+class VerRecetasMedicoActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_recetas_medico)
+        val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
+        toolbar.title = toolbar.title.toString()
         setSupportActionBar(toolbar)
         cargarRecetasDeFirebase()
     }
@@ -62,13 +64,13 @@ class Vaci() : Item<ViewHolder>() {
         itemView.dniPacientebox.text = "No tenes recetas"
         itemView.obrasocialbox.text = ""
         itemView.diagnosticobox.text = ""
-        itemView.matriculabox.text =""
+        itemView.matriculabox.text = ""
 
         itemView.farmacobox.text = ""
-        itemView.cantidadbox.text =""
+        itemView.cantidadbox.text = ""
 
         itemView.consumobox.text = ""
-        itemView.lugarbox.text =""
+        itemView.lugarbox.text = ""
         itemView.fechabox.text = ""
     }
 

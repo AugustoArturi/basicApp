@@ -2,6 +2,7 @@ package com.fiuba.digitalmd.Medico
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Models.idReceta
@@ -21,6 +22,8 @@ class HacerRecetaActivity : SignedInActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hacer_receta)
+        val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
+        toolbar.title = "Realice una receta"
         setSupportActionBar(toolbar)
 
         mAuth = FirebaseAuth.getInstance()
