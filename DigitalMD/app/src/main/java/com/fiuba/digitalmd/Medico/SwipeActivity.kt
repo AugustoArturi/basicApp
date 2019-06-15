@@ -30,11 +30,11 @@ class SwipeActivity : SignedInActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                  p0.children.forEach {
-                      val user = it.getValue(Paciente::class.java)
-                      if (deberiaMostrarDiagnostico(user))
-                          listPacientes.add(user!!)
-               }
+                p0.children.forEach {
+                    val user = it.getValue(Paciente::class.java)
+                    if (deberiaMostrarDiagnostico(user))
+                        listPacientes.add(user!!)
+                }
                 loadAdapter(listPacientes)
             }
 

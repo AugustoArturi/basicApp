@@ -69,13 +69,10 @@ class ItemReceta(val receta: Receta?) : Item<ViewHolder>() {
         viewHolder.itemView.cantidadbox.text = "Cantidad: " +receta.cantidadFarmaco
 
         viewHolder.itemView.consumobox.text = "Modo de consumo: " +receta!!.modoConsumo
-        viewHolder.itemView.lugarbox.text = "Se receto para: " +receta.lugar
+        viewHolder.itemView.lugarbox.text = "Se receto en: " +receta.lugar
         viewHolder.itemView.fechabox.text = "Fecha: " +receta!!.fecha
         viewHolder.itemView.idrecetabox.text= "ID receta: " + receta!!.recetaID
         viewHolder.itemView.matriculabox.text = "Matricula medico: " + receta!!.matricula
-
-
-
     }
 
 }

@@ -3,122 +3,116 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/back_black">
-
-
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/back3">
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:id="@+id/idrecetabox"/>
-
-         <TextView
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:singleLine="true"
-            android:drawablePadding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:id="@+id/matriculabox"/>
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Matricula Medico"
+                        style="@style/ShadowText"
+                        android:layout_weight="1"
+                        android:id="@+id/matriculabox"/>
+                <TextView
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="NroSerie"
+                        style="@style/ShadowText"
+                        android:layout_weight="1"
+                        android:id="@+id/idrecetabox"/>
+        </LinearLayout>
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/dniPacientebox"/>
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/obrasocialbox"/>
+                android:layout_height="wrap_content">
+                <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="DNI Paciente"
+                        style="@style/ShadowText"
+                        android:layout_weight="2"
+                        android:id="@+id/dniPacientebox"/>
+                <TextView
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="obra social"
+                        style="@style/ShadowText"
+                        android:layout_weight="3"
+                        android:id="@+id/obrasocialbox"/>
+        </LinearLayout>
 
         <TextView
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="10dp"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:text="Diagnostico"
+                style="@style/ShadowText"
                 android:id="@+id/diagnosticobox"/>
-
         <TextView
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:text="Medicamento recetado"
+                style="@style/ShadowText"
                 android:id="@+id/farmacobox"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:textStyle="bold"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/cantidadbox" />
+                <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Cantidad"
+                        style="@style/ShadowText"
+                        android:layout_weight="3"
+                        android:id="@+id/cantidadbox" />
 
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/consumobox"/>
+                <TextView
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Modo consumo"
+                        style="@style/ShadowText"
+                        android:layout_weight="2"
+                        android:id="@+id/consumobox"/>
+        </LinearLayout>
 
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
+
+
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/lugarbox"/>
-        <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:id="@+id/fechabox"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Unidad operativa"
+                        style="@style/ShadowText"
+                        android:layout_weight="3"
+                        android:id="@+id/lugarbox"/>
+                <TextView
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:text="Fecha realizada"
+                        style="@style/ShadowText"
+                        android:layout_weight="4"
+                        android:id="@+id/fechabox"/>
+        </LinearLayout>
         <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorBlack"
                 android:layout_marginTop="10dp"
         />
 
