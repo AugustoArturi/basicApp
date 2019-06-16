@@ -16,7 +16,6 @@ import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_paciente.*

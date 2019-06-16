@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
-import com.fiuba.digitalmd.Paciente.ItemReceta
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
 import com.fiuba.digitalmd.SignedInActivity
+import com.fiuba.digitalmd.common.ItemReceta
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

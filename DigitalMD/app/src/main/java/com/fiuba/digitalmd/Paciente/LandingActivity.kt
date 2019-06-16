@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
-import kotlinx.android.synthetic.main.activity_hacer_receta.*
 import kotlinx.android.synthetic.main.activity_landing.*
 
 class LandingActivity : SignedInActivity() {
