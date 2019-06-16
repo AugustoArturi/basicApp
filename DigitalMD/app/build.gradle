@@ -47,5 +47,7 @@ dependencies {
     implementation 'com.xwray:groupie:2.3.0'
     implementation 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    implementation 'com.google.code.gson:gson:2.8.5'
 
 }
