@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Receta
-import com.fiuba.digitalmd.Paciente.ItemReceta
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
+import com.fiuba.digitalmd.common.ItemReceta
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -40,9 +40,9 @@ class VenderRecetaActivity : SignedInActivity() {
     }
 
     private fun mostrarReceta() {
-        val receta = et_idReceta.text.toString()
+        val idReceta = et_idReceta.text.toString()
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas/idRecetas/${receta}")
+        val database = FirebaseDatabase.getInstance().getReference("/recetas/idRecetas/${idReceta}")
 
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 
