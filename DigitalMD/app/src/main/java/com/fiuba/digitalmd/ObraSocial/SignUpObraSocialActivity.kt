@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_sign_up_farmacia.emailbox
 import kotlinx.android.synthetic.main.activity_sign_up_farmacia.nombrebox
 import kotlinx.android.synthetic.main.activity_sign_up_farmacia.passwordbox
 import kotlinx.android.synthetic.main.activity_sign_up_obra_social.*
+import java.util.*
 
 
 class SignUpObraSocialActivity : AppCompatActivity() {
@@ -68,11 +69,11 @@ class SignUpObraSocialActivity : AppCompatActivity() {
     }
 
     private fun subirImagenAFirebase(){
-
-        val ref = FirebaseStorage.getInstance().getReference("/images/Medicos")
+        val uid = UUID.randomUUID()
+        val ref = FirebaseStorage.getInstance().getReference("/images/obra_socal/$uid")
         val progressDialog = ProgressDialog(this)
 
-        progressDialog.setTitle("Creando nuevo perfil de obra social ")
+        progressDialog.setTitle("Creando nuevo perfil, espere por favor ")
         progressDialog.show()
         ref.putFile(photoUri!!)
             .addOnSuccessListener { taskSnapshot ->
@@ -99,10 +100,23 @@ class SignUpObraSocialActivity : AppCompatActivity() {
                 startActivity(Intent(this, SignInActivity::class.java))
             }
 
+        val ref2 = FirebaseDatabase.getInstance().getReference("/listaObraSociales/$uid")
+        ref2.setValue(obrasocial.nombre.toUpperCase())
+            .addOnSuccessListener {
+                Log.d("SignUpActivity", "Obra social added to database")
+                startActivity(Intent(this, SignInActivity::class.java))
+            }
+
     }
 
 
     private fun validarCampos(): Boolean {
+
+        if (photoUri == null) {
+            btnSubirFotoMedico.error = "Por favor elija o suba una foto"
+            btnSubirFotoMedico.requestFocus()
+            return false
+        }
         if (nombrebox.text.toString().isEmpty()) {
             nombrebox.error = "Por favor ingresa el nombre de la farmacia"
             nombrebox.requestFocus()
@@ -128,11 +142,7 @@ class SignUpObraSocialActivity : AppCompatActivity() {
             return false
         }
 
-        if (photoUri.toString().isEmpty()) {
-            btnSubirFotoMedico.error = "Por favor elija o suba una foto"
-            btnSubirFotoMedico.requestFocus()
-            return false
-        }
+
 
         return true
     }

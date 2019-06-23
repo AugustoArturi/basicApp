@@ -37,7 +37,7 @@ class HacerRecetaActivity : SignedInActivity() {
     private fun subirRecetaAFirebase() {
         val matricula = InfoActual.getMedicoActual().matricula
         val dniPaciente = dniPacientebox.text.toString()
-        val obrasocial = obrasocialbox.text.toString()
+        val obrasocial = obrasocialbox.text.toString().toUpperCase()
         val diagnostico = diagnosticobox.text.toString()
         val farmaco = farmacobox.text.toString()
         val cantidadFarmaco = cantidadbox.text.toString()

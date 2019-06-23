@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.activity_sign_up_paciente.emailbox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.nombrebox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.obrasocialbox
 import kotlinx.android.synthetic.main.activity_sign_up_paciente.passwordbox
+import java.util.*
 
 class SignUpMedicoActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -66,8 +67,8 @@ class SignUpMedicoActivity : AppCompatActivity() {
     }
 
     private fun subirImagenAFirebase(){
-
-        val ref = FirebaseStorage.getInstance().getReference("/images/Medicos")
+        val uid = UUID.randomUUID()
+        val ref = FirebaseStorage.getInstance().getReference("/images/Medicos/$uid")
         val progressDialog = ProgressDialog(this)
 
         progressDialog.setTitle("Creando nuevo perfil de medico ")
