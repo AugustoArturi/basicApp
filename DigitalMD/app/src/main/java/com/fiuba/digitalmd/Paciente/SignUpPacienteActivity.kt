@@ -41,7 +41,7 @@ class SignUpPacienteActivity : AppCompatActivity() {
         }
     }
 
-    private fun cargarListView() {
+  /*  private fun cargarListView() {
         val listaDeServicios = leerListaDeObraSocialesDeFirebase()
         val obrasocial = findViewById<Spinner>(R.id.spinner)
         val box = findViewById<EditText>(R.id.obrasocialbox)
@@ -58,7 +58,7 @@ class SignUpPacienteActivity : AppCompatActivity() {
             }
 
         }
-    }
+    }*/
 
     private fun subirPacienteAFirebase() {
         val name = nombrebox.text.toString()
