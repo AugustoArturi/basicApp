@@ -32,6 +32,8 @@ class HacerRecetaActivity : SignedInActivity() {
             if(validarCampos())
                 subirRecetaAFirebase()
         }
+
+
     }
 
     private fun subirRecetaAFirebase() {

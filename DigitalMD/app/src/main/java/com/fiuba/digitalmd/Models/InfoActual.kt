@@ -6,7 +6,16 @@ object InfoActual {
     private var medico_actual : Medico = Medico("","","","","","","")
     private var obra_social_actual : ObraSocial = ObraSocial("","","","")
     private var farmacia_actual : Farmacia = Farmacia("","","","","","")
+    private var receta_actual : Receta = Receta("","","","","","","","","",0)
     private var uidActual : String = ""
+
+    fun setRecetaActual(receta: Receta){
+        receta_actual = receta
+    }
+
+    fun getRecetaActual(): Receta{
+        return receta_actual
+    }
     fun setUsuarioActual(user : User){
         usuario_actual = user
     }

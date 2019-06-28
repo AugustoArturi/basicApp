@@ -13,7 +13,7 @@
                   android:layout_centerVertical="true">
 
 
-        <androidx.appcompat.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -22,15 +22,19 @@
 
                 app:titleTextColor="@color/colorPrimary"
                 app:title="Digital-MD"/>
+
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:hint="ID RECETA" android:textSize="24sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"
                   android:layout_marginStart="10dp" android:id="@+id/et_idReceta"
         />
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:id="@+id/btnBuscarReceta" android:text="Buscar receta"  android:background="@drawable/btnround" />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/btnVender" android:text="Vender receta" android:layout_marginTop="5dp"  android:background="@drawable/btnroundred" />
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/rvReceta"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -38,7 +42,6 @@
 
 
 
-
-
     </LinearLayout>
+
 </RelativeLayout>

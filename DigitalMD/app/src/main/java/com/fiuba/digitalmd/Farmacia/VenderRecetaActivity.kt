@@ -1,6 +1,7 @@
 package com.fiuba.digitalmd.Farmacia
 
 import android.content.Intent
+import android.icu.text.IDNA
 import android.os.Bundle
 import android.widget.Toast
 import com.fiuba.digitalmd.Models.InfoActual
@@ -19,11 +20,24 @@ import kotlinx.android.synthetic.main.activity_vender_receta.*
 class VenderRecetaActivity : SignedInActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        var click = false
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vender_receta)
         btnBuscarReceta.setOnClickListener {
-            if (camposValidos())
+            if (camposValidos()) {
                 mostrarReceta()
+                click =  true
+            }
+
+        }
+
+        btnVender.setOnClickListener {
+            if (click){
+                val receta = InfoActual.getRecetaActual()
+                val ref = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getFarmaciaActual().cuit}/${receta!!.recetaID}")
+                ref.setValue(receta)
+                startActivity(Intent(baseContext, FarmaciaLandingActivity::class.java))
+            }
         }
     }
 
@@ -58,9 +72,8 @@ class VenderRecetaActivity : SignedInActivity() {
                         val receta = p0.getValue(Receta::class.java)
                         adapter.add(ItemReceta(receta))
                         rvReceta.adapter = adapter
+                        InfoActual.setRecetaActual(receta!!)
 
-                        val ref = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getFarmaciaActual().cuit}/${receta!!.recetaID}")
-                        ref.setValue(receta)
                 }
             }
         })

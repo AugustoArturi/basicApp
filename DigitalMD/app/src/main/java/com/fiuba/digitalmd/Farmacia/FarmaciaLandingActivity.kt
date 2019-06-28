@@ -30,6 +30,8 @@ class FarmaciaLandingActivity : SignedInActivity() {
             val intent = Intent(this, VenderRecetaActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
     override fun onBackPressed() {
@@ -38,8 +40,8 @@ class FarmaciaLandingActivity : SignedInActivity() {
 
     private fun cargarRecetasDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
-        val database = FirebaseDatabase.getInstance().getReference("/recetas")
-            .orderByChild("cuitFarmacia").equalTo(InfoActual.getFarmaciaActual().cuit)
+        val database = FirebaseDatabase.getInstance().getReference("/recetas/${InfoActual.getFarmaciaActual().cuit}")
+            //.orderByChild("cuitFarmacia").equalTo(InfoActual.getFarmaciaActual().cuit)
         database.addListenerForSingleValueEvent(object : ValueEventListener {
 
             override fun onCancelled(p0: DatabaseError) {
