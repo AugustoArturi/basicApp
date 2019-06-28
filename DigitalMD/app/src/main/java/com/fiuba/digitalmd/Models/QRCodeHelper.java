@@ -1,4 +1,4 @@
-package com.fiuba.digitalmd;
+package com.fiuba.digitalmd.Models;
 
 import android.content.Context;
 import android.graphics.Bitmap;

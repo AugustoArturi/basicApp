@@ -1,4 +1,4 @@
-package com.fiuba.digitalmd;
+package com.fiuba.digitalmd.Models;
 
 import android.widget.EditText;
 

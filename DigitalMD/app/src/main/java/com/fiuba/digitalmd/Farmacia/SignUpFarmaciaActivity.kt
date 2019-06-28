@@ -139,6 +139,11 @@ class SignUpFarmaciaActivity : AppCompatActivity() {
             passwordbox.requestFocus()
             return false
         }
+        if (photoUri == null) {
+            btnSubirFotoMedico.error = "Por favor elija o suba una foto"
+            btnSubirFotoMedico.requestFocus()
+            return false
+        }
 
 
         return true

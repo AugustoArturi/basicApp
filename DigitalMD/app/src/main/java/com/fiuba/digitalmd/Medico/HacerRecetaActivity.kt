@@ -8,7 +8,7 @@ import com.fiuba.digitalmd.Models.Receta
 import com.fiuba.digitalmd.Models.idReceta
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignedInActivity
-import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
+import com.fiuba.digitalmd.Models.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,7 +22,7 @@ class HacerRecetaActivity : SignedInActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hacer_receta)
-        val toolbar: Toolbar = findViewById(R.id.toolbarProfile)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         toolbar.title = "Realice una receta"
         setSupportActionBar(toolbar)
 

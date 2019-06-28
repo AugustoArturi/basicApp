@@ -10,7 +10,7 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.fiuba.digitalmd.Models.Receta
-import com.fiuba.digitalmd.QRCodeHelper
+import com.fiuba.digitalmd.Models.QRCodeHelper
 import com.fiuba.digitalmd.R
 import com.google.gson.Gson
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel

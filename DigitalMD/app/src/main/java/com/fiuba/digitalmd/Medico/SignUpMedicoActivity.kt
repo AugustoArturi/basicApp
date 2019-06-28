@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.digitalmd.Models.Medico
 import com.fiuba.digitalmd.R
 import com.fiuba.digitalmd.SignInActivity
-import com.fiuba.digitalmd.ValidacionUtils.validarNoVacio
+import com.fiuba.digitalmd.Models.ValidacionUtils.validarNoVacio
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
