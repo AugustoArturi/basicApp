@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi
 import com.fiuba.digitalmd.Models.InfoActual
 import com.fiuba.digitalmd.Models.Paciente
 import com.fiuba.digitalmd.R
+import com.fiuba.digitalmd.SignInActivity
 import com.fiuba.digitalmd.SignedInActivity
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -57,16 +58,34 @@ class PacienteActivity : SignedInActivity() {
         }
 
         btnCConfirmarConsulta.setOnClickListener {
-            subirDatosAFirebase()
+            if (validarDatos())
+                subirDatosAFirebase()
 
         }
     }
+    override fun onBackPressed() {
+        val intent = Intent(this, MisDiagnosticosActivity::class.java)
+        startActivity(intent)
+    }
 
-    private fun subirDatosAFirebase() {
+
+    private fun validarDatos(): Boolean {
         if (etComentario.text.toString().isEmpty()) {
             etComentario.error = "Por favor ingresa un comentario"
             etComentario.requestFocus()
+            return false
         }
+        if (photoUri == null && image_uri == null ) {
+            btnCConfirmarConsulta.error = "Por favor elija o suba una foto"
+            btnCConfirmarConsulta.requestFocus()
+            return false
+        }
+
+        return true
+    }
+
+    private fun subirDatosAFirebase() {
+
 
         val uid = UUID.randomUUID()
 

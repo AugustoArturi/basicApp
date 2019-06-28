@@ -34,6 +34,11 @@ class MisDiagnosticosActivity : SignedInActivity() {
             leerDiagnosticosDeFirebase()
         }
     }
+    override fun onBackPressed() {
+        val intent = Intent(this, LandingActivity::class.java)
+        startActivity(intent)
+    }
+
 
     private fun leerDiagnosticosDeFirebase() {
         val adapter = GroupAdapter<ViewHolder>()
